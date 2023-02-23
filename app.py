@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from scripts import tabledef
+import json
+import os
+from flask import Flask, redirect, url_for, render_template, request, session
 from scripts import forms
 from scripts import helpers
-from flask import Flask, redirect, url_for, render_template, request, session
-import json
-import sys
-import os
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(12)  # Generic key for dev purposes only
@@ -19,6 +18,16 @@ app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 # -------- Login ------------------------------------------------------------- #
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    """
+    This function handles the login page, which is the root page of the website.
+
+    GET requests return a page containing a form for entering login credentials.
+    POST requests handle form submissions and either log the user in or display an error message.
+
+    Returns:
+        If the user is not logged in, the function returns a login page.
+        If the user is logged in, the function returns the home page.
+    """
     if not session.get('logged_in'):
         form = forms.LoginForm(request.form)
         if request.method == 'POST':
@@ -34,10 +43,17 @@ def login():
         return render_template('login.html', form=form)
     user = helpers.get_user()
     return render_template('home.html', user=user)
-    print("HELLO WORLD")
 
 @app.route("/logout")
 def logout():
+    """
+    This function handles the logout functionality.
+
+    When a user logs out, their session is ended and they are redirected to the login page.
+
+    Returns:
+        A redirect to the login page.
+    """
     session['logged_in'] = False
     return redirect(url_for('login'))
 
@@ -45,6 +61,16 @@ def logout():
 # -------- Signup ---------------------------------------------------------- #
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    """
+    This function handles the signup page.
+
+    GET requests return a page containing a form for creating a new account.
+    POST requests handle form submissions and either create the account or display an error message.
+
+    Returns:
+        If the user is not logged in, the function returns a signup page.
+        If the user is logged in, the function redirects to the home page.
+    """
     if not session.get('logged_in'):
         form = forms.LoginForm(request.form)
         if request.method == 'POST':
@@ -66,6 +92,16 @@ def signup():
 # -------- Settings ---------------------------------------------------------- #
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
+     """
+    This function handles the settings page, where users can change their account information.
+
+    GET requests return a page containing a form for changing the user's password and email address.
+    POST requests handle form submissions and update the user's account information.
+
+    Returns:
+        If the user is logged in, the function returns the settings page.
+        If the user is not logged in, the function redirects to the login
+    """
     if session.get('logged_in'):
         if request.method == 'POST':
             password = request.form['password']
