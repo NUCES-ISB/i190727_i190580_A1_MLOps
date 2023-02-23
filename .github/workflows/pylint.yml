@@ -19,6 +19,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         pip install black
+        pip install pytest
         pip install -r requirements.txt
         echo "STARTING TEST NOW"
     - name: Running black Formatter
@@ -29,3 +30,6 @@ jobs:
       run: |
         pylint app.py
         echo "TEST WENT VIRAL"
+    - name: Testing 404 Page
+      run: |
+        python -m pytest
