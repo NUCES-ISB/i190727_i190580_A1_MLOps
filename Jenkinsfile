@@ -40,9 +40,5 @@ pipeline {
             }
         }
     }
-    options {
-        // Fail fast, abort pipeline as soon as any stage fails
-        failFast true
-    }
 }
 
