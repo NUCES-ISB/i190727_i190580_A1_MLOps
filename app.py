@@ -24,8 +24,7 @@ authentication and database interactions.
 
 import json
 import os
-import jsonify
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, redirect, url_for, render_template, request, session, jsonify
 from scripts import forms
 from scripts import helpers
 
