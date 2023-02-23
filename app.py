@@ -2,6 +2,7 @@
 This Flask application provides a simple login system with signup and settings pages.
 
 The application has four routes:
+
 - Login ('/'): Renders a login page where users can enter their username 
 and password to authenticate. If successful,
 the user is redirected to their home page ('/home'). If unsuccessful, 
@@ -136,6 +137,8 @@ def settings():
         return render_template('settings.html', user=user)
     return redirect(url_for('login'))
 
+
+@app.route('/')
 
 # ======== Main ============================================================== #
 if __name__ == "__main__":
