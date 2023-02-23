@@ -60,7 +60,7 @@ def login():
                 if helpers.credentials_valid(username, password):
                     session['logged_in'] = True
                     session['username'] = username
-                    return json.dumps({'status': 'Login successful'})
+                    return json.dumps({'status': 'Login successful..!'})
                 return json.dumps({'status': 'Invalid user/pass'})
             return json.dumps({'status': 'Both fields required'})
         return render_template('login.html', form=form)
