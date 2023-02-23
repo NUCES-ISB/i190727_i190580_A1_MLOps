@@ -137,6 +137,13 @@ def settings():
     return redirect(url_for('login'))
 
 
+@app.errorhandler(404)
+def invalid_route(e):
+    """
+    This function handles 404 errors.
+    """
+    return jsonify({'errorCode' : 404, 'message' : 'Route not found'})
+
 # ======== Main ============================================================== #
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True, host="0.0.0.0")
