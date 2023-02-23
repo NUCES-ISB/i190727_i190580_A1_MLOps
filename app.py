@@ -2,6 +2,7 @@
 This Flask application provides a simple login system with signup and settings pages.
 
 The application has four routes:
+
 - Login ('/'): Renders a login page where users can enter their username 
 and password to authenticate. If successful,
 the user is redirected to their home page ('/home'). If unsuccessful, 
@@ -137,6 +138,7 @@ def settings():
     return redirect(url_for('login'))
 
 
+
 @app.errorhandler(404)
 def invalid_route(e_name):
     """
@@ -144,6 +146,7 @@ def invalid_route(e_name):
     """
     print(e_name)
     return jsonify({'errorCode' : 404, 'message' : 'Route not found'})
+
 
 # ======== Main ============================================================== #
 if __name__ == "__main__":
