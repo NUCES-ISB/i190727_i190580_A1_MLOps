@@ -25,7 +25,7 @@ authentication and database interactions.
 
 import json
 import os
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, redirect, url_for, render_template, request, session, jsonify
 from scripts import forms
 from scripts import helpers
 
@@ -138,7 +138,15 @@ def settings():
     return redirect(url_for('login'))
 
 
-@app.route('/')
+
+@app.errorhandler(404)
+def invalid_route(e_name):
+    """
+    This function handles 404 errors.
+    """
+    print(e_name)
+    return jsonify({'errorCode' : 404, 'message' : 'Route not found'})
+
 
 # ======== Main ============================================================== #
 if __name__ == "__main__":
