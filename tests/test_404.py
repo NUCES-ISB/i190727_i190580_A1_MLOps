@@ -6,3 +6,4 @@ def test_404(app, client):
     assert res.status_code == 200
     expected = {'errorCode' : 404, 'message' : 'Route not found'}
     assert expected == json.loads(res.get_data(as_text=True))
+    
