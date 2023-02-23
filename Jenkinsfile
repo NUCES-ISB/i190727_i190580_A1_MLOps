@@ -36,6 +36,7 @@ pipeline {
             steps {
                 // Run Pytest on app.py
                 bat 'python -m pytest'
+                echo "TEST PASSED"
             }
         }
     }
