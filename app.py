@@ -24,6 +24,7 @@ authentication and database interactions.
 
 import json
 import os
+import jsonify
 from flask import Flask, redirect, url_for, render_template, request, session
 from scripts import forms
 from scripts import helpers
@@ -138,10 +139,11 @@ def settings():
 
 
 @app.errorhandler(404)
-def invalid_route(e):
+def invalid_route(e_name):
     """
     This function handles 404 errors.
     """
+    print(e_name)
     return jsonify({'errorCode' : 404, 'message' : 'Route not found'})
 
 # ======== Main ============================================================== #
