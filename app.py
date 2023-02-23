@@ -2,13 +2,19 @@
 This Flask application provides a simple login system with signup and settings pages.
 
 The application has four routes:
-- Login ('/'): Renders a login page where users can enter their username and password to authenticate. If successful,
-the user is redirected to their home page ('/home'). If unsuccessful, an error message is displayed.
-- Logout ('/logout'): Logs the user out by clearing their session data and redirecting them to the login page.
-- Signup ('/signup'): Renders a signup page where users can enter a new username, password, and email address to create
-a new account. If successful, the user is automatically logged in and redirected to their home page. If unsuccessful,
+- Login ('/'): Renders a login page where users can enter their username 
+and password to authenticate. If successful,
+the user is redirected to their home page ('/home'). If unsuccessful, 
 an error message is displayed.
-- Settings ('/settings'): Renders a settings page where users can change their password and/or email address. If
+- Logout ('/logout'): Logs the user out by clearing their session data and redirecting them to 
+the login page.
+- Signup ('/signup'): Renders a signup page where users can enter a 
+new username, password, and email address to create
+a new account. If successful, the user is automatically logged in and redirected to
+ their home page. If unsuccessful,
+an error message is displayed.
+- Settings ('/settings'): Renders a settings page where users can change their password and/or email 
+address. If
 changes are made, the user's information is updated in the database.
 
 The application uses several helper functions in the 'helpers.py' module to manage user authentication and database interactions.
