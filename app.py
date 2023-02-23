@@ -17,7 +17,8 @@ an error message is displayed.
 address. If
 changes are made, the user's information is updated in the database.
 
-The application uses several helper functions in the 'helpers.py' module to manage user authentication and database interactions.
+The application uses several helper functions in the 'helpers.py' module to manage user 
+authentication and database interactions.
 """
 
 
