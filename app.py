@@ -34,7 +34,7 @@ def login():
         return render_template('login.html', form=form)
     user = helpers.get_user()
     return render_template('home.html', user=user)
-
+    print("HELLO WORLD")
 
 @app.route("/logout")
 def logout():
