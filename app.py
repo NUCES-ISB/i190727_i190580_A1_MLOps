@@ -92,7 +92,7 @@ def signup():
 # -------- Settings ---------------------------------------------------------- #
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
-     """
+    """
     This function handles the settings page, where users can change their account information.
 
     GET requests return a page containing a form for changing the user's password and email address.

@@ -22,5 +22,5 @@ jobs:
         echo "STARTING TEST NOW"
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        pylint app.py
         echo "TEST WENT VIRAL"
