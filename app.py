@@ -1,6 +1,6 @@
 """
 This Flask application provides a simple login system with signup and settings pages.
-(Here I add a single small line)
+(Here I add a single small line again)
 The application has four routes:
 
 - Login ('/'): Renders a login page where users can enter their username 
