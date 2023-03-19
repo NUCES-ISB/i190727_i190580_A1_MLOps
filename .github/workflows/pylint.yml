@@ -1,6 +1,8 @@
-name: Pylint
+name: Pylint, Black Formatter, Pytest
 
-on: [push]
+on:
+  push:
+    branches: [talals_branch, ahmeds_branch]
 
 jobs:
   build:
@@ -42,3 +44,4 @@ jobs:
           python -m pytest
           echo "Master Branch has been successfully tested. Final Objective achieved"
      
+
