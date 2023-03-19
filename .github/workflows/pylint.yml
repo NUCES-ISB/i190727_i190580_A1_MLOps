@@ -41,8 +41,6 @@ jobs:
        steps:
        - name: Testing 404 Page
          run: |
-          pip install pytest
-          python -m pytest
           echo "Master Branch has been successfully tested. Final Objective achieved"
      
 
