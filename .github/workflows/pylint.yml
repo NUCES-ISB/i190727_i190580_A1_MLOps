@@ -2,7 +2,7 @@ name: Pylint, Black Formatter, Pytest
 
 on:
   push:
-    branches: [talals_branch, ahmeds_branch]
+    branches: [ahmeds_branch, master]
 
 jobs:
   build:
