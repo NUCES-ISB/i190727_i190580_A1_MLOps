@@ -39,7 +39,7 @@ jobs:
        if: ${{ github.ref == 'refs/heads/master' }}
        runs-on: ubuntu-latest
        steps:
-       - name: Testing 404 Page
+       - name: Final Echo
          run: |
           echo "Master Branch has been successfully tested. Final Objective achieved"
      
