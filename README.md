@@ -23,6 +23,7 @@
 - Bulma framework
 - Limited custom css/js
 - Easily customizable
+- Perfect!
 
 ## Setup
 ``` 
